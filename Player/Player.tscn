@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Cannon/Cannon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://asset/kenney_topdowntanks/Spritesheet/onlyObjects_retina.png" type="Texture" id=2]
+[ext_resource path="res://Player/Player.gd" type="Script" id=3]
+[ext_resource path="res://Bullet/Bullet.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 39.7666, 38.0588 )
+
+[node name="Player" instance=ExtResource( 1 )]
+collision_layer = 16
+collision_mask = 2147483648
+script = ExtResource( 3 )
+Bullet = ExtResource( 4 )
+
+[node name="Body" parent="." index="0"]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 307.667, 262.358, 80.3333, 83.642 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource( 1 )
+
+[node name="Turret" parent="." index="2"]
+texture = ExtResource( 2 )
+offset = Vector2( 20, 0 )
+region_enabled = true
+region_rect = Rect2( 684, 14, 60, 24 )
+
+[node name="Muzzle" parent="Turret" index="0"]
+position = Vector2( 55, 0 )

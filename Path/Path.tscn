@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Fish/Inherited/RedFish.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Path/tres/curve_1.tres" type="Curve2D" id=3]
+
+[node name="Path" type="Path2D"]
+curve = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2( -200, -100 )
+rotation = 1.08267
+
+[node name="RedFish" parent="PathFollow2D" instance=ExtResource( 2 )]
+speed = 150
